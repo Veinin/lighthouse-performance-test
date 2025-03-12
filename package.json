@@ -1,0 +1,18 @@
+{
+  "name": "lighthouse-auth-test",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "用于测试需要登录的网页性能的Lighthouse框架",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lighthouse": "^12.4.0",
+    "puppeteer": "^24.4.0",
+    "yargs": "^17.7.2"
+  }
+}
