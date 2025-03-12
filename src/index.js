@@ -49,9 +49,6 @@ async function main() {
         const page = await browser.newPage();
         await login(page, siteConfig);
 
-        // 获取登录后的cookies
-        const cookies = await browser.cookies();
-
         // 创建报告目录
         const dateStr = generateDatePath();
         const reportDir = path.join(config.reports.outputDir, siteConfig.name, dateStr);
@@ -70,9 +67,6 @@ async function main() {
             const options = {
                 ...config.lighthouseConfig.settings,
                 disableStorageReset: true,
-                extraHeaders: {
-                    Cookie: cookies.map(c => `${c.name}=${c.value}`).join('; ')
-                }
             };
 
             // 运行测试
