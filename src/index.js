@@ -47,6 +47,7 @@ async function main() {
     try {
         // 登录
         const page = await browser.newPage();
+        await page.setViewport({ width: 1920, height: 1080, isMobile: false, hasTouch: false });
         await login(page, siteConfig);
 
         // 创建报告目录
